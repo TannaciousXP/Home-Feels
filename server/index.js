@@ -2,7 +2,7 @@ var express = require('express');
 var bodyParser = require('body-parser');
 // UNCOMMENT THE DATABASE YOU'D LIKE TO USE
 // var items = require('../database-mysql');
-var items = require('../database-mongo');
+var designers = require('../database-mongo');
 var request = require('request');
 var http = require('http');
 
@@ -13,11 +13,11 @@ app.use(express.static(__dirname + '/../react-client/dist'));
 
 // UNCOMMENT FOR ANGULAR
 // app.use(express.static(__dirname + '/../angular-client'));
-app.use(express.static(__dirname + '/../node_modules'));
+// app.use(express.static(__dirname + '/../node_modules'));
 
 app.get('/designers', function (req, res) {
   console.log('INSIDE OF APP.GET SERVER: ', req.body)
-  items.selectAll(function(err, data) {
+  designers.selectAll(function(err, data) {
     if(err) {
       res.sendStatus(500);
     } else {
