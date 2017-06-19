@@ -13,7 +13,7 @@ class App extends React.Component {
 
   componentDidMount() {
     $.ajax({
-      url: '/items', 
+      url: '/designers', 
       success: (data) => {
         this.setState({
           items: data
@@ -27,7 +27,7 @@ class App extends React.Component {
 
   render () {
     return (<div>
-      <h1>Item List</h1>
+      <h1>Interior Designs</h1>
       <List items={this.state.items}/>
     </div>)
   }

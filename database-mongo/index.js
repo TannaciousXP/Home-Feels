@@ -11,20 +11,11 @@ db.once('open', function() {
   console.log('mongoose connected successfully');
 });
 
-// create a schema for styles
-  // designSchema
-    // name {type: String, Unique: true}
 
-var itemSchema = mongoose.Schema({
-  quantity: Number,
-  description: String
+var designersSchema = mongoose.Schema({
+  name: {type: String, unique: true},
+  designType: String  
 });
-
-// create a schemea for interiorDesignerSchemea
-  // name: {type: String, Unqiue: true}
-  // bio: String
-  // tips: String
-  // designtype: foreign key of designSchema name
 
 /*
 Charles and Ray Eames for mid-century modern                        
@@ -37,16 +28,19 @@ Joseph Dirand for French/Parisian
 // create models for interiorsDesignerSchema Charles and Ray, Poul, Jospeh
 
 
-var Item = mongoose.model('Item', itemSchema);
+// var Item = mongoose.model('Item', itemSchema);
+
+var Designer = mongoose.model('Design', designersSchema);
 
 var selectAll = function(callback) {
-  Item.find({}, function(err, items) {
+  Designer.find({}, function(err, designers) {
     if(err) {
       callback(err, null);
     } else {
-      callback(null, items);
+      callback(null, designers);
     }
   });
 };
 
 module.exports.selectAll = selectAll;
+
