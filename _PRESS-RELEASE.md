@@ -18,27 +18,34 @@ Once the project moves into development, the press release can be used as a touc
  
 ## Heading ##
   > Name the product in a way the reader (i.e. your target customers) will understand.
+  Home Feels
 
 ## Sub-Heading ##
   > Describe who the market for the product is and what benefit they get. One sentence only underneath the title.
-
+  Home Feels is for those who want to come home to a place they absolutely love
 ## Summary ##
   > Give a summary of the product and the benefit. Assume the reader will not read anything else so make this paragraph good.
+  Home Feels is an app that simplify the decisions for your interior design quest. You get to choose which style you like, check out some of the top interior designs for each style and their tips for styling your home. Also, you can buy / sell / swap your existing furniture
 
 ## Problem ##
   > Describe the problem your product solves.
+  Your home is your sanctuary, it brings relaxation, relieves stress, and it's a place that soothes your soul. Coming home to a place that have those results speeds up your recovery from tackling the day and prepare you for the next. 
 
 ## Solution ##
   > Describe how your product elegantly solves the problem.
+  Home feels bring the ease of choosing your prefer style and combines the uniqueness of your personality to manifest an extension of yourself to sanctuary.
 
 ## Quote from You ##
   > A quote from a spokesperson in your company.
+  Design your inner sanctuary
 
 ## How to Get Started ##
   > Describe how easy it is to get started.
-
+  Simpliy click, choose, design!
 ## Customer Quote ##
   > Provide a quote from a hypothetical customer that describes how they experienced the benefit.
+  'I never had the time to choose furniture for my home because I never had the time nor experience with inerior design. With Home Feels, it was easy to pick a style that I like, and getting the furniture for that style was easy because the platform let you buy / sell / swap with people that has those furniture already'
 
 ## Closing and Call to Action ##
   > Wrap it up and give pointers where the reader should go next.
+  Check out Home Feel's list of furniture that may suit your style and have the same feeling when Superman goes back to his 'Fortress of Solitude.' 
