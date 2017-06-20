@@ -16,14 +16,30 @@ app.use(express.static(__dirname + '/../react-client/dist'));
 // app.use(express.static(__dirname + '/../angular-client'));
 // app.use(express.static(__dirname + '/../node_modules'));
 
-app.get('/designers', function (req, res) {
-  console.log('INSIDE OF APP.GET SERVER: ', req.body)
-  designsOrDesigners.selectAllDesigns(function(err, data) {
+app.get('/designers', function(req, res) {
+  console.log('INSDE OF APP.GET DESIGNERS: ', req.query.designType);
+  designsOrDesigners.selectAllDesigners(function(err, designers) {
+    if (err) {
+      res.sendStatus(500);
+    } else {
+      designers.filter(function(designer) {
+        if (designer.designType === req.query.designType) {
+          return designer;
+        }
+      });
+      res.json(designers);
+    }
+  })
+});
+
+app.get('/designs', function (req, res) {
+  console.log('INSIDE OF APP.GET DESIGNS: ');
+  designsOrDesigners.selectAllDesigns(function(err, designs) {
     if(err) {
       res.sendStatus(500);
     } else {
       // console.log('INSDE GET: ', data);
-      res.json(data);
+      res.json(designs);
     }
   });
 });

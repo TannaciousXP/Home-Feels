@@ -4,7 +4,6 @@ mongoose.connect('mongodb://localhost/test');
 //     /* Drop the DB */
 //     mongoose.connection.db.dropDatabase();
 // });
-// MyModel.collection.drop();
 var db = mongoose.connection;
 
 
@@ -197,7 +196,7 @@ Design.findOne({ designType: 'Scandinavian' }, function (err, design){
 var industrial = new Design ({
   designType: 'Industrial',
   description: 'Industrial style or industrial chic refers to an aesthetic trend in interior design that takes clues from old factories and industrial spaces that in recent years have been converted to lofts and other living spaces.',
-  images: ['Industrial style or industrial chic refers to an aesthetic trend in interior design that takes clues from old factories and industrial spaces that in recent years have been converted to lofts and other living spaces.', 'http://blog.froy.com/wp-content/uploads/2014/12/Industrial-Decor-3.jpg']
+  images: ['https://d4qwptktddc5f.cloudfront.net/canopy_fuseproject_private_office_workstations_and_chairs_copy.jpg', 'https://static.dezeen.com/uploads/2016/10/yves-behar-canopy-interiors-offices-san-francisco-california-usa_dezeen_2364_col_0-852x936.jpg']
 });
 
 Design.findOne({ designType: 'Industrial' }, function (err, design){

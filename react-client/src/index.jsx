@@ -7,16 +7,34 @@ class App extends React.Component {
   constructor(props) {
     super(props);
     this.state = { 
-      items: []
+      designs: [],
+      designers: null
     }
+  }
+
+  searchDesigners (designType) {
+    $.ajax({
+      url: '/designers',
+      method: 'GET',
+      data: {designType: designType},
+      success: (designers) => {
+        console.log('designers')
+        this.setState({
+          designers: designers
+        })
+      },
+      error: (err) => {
+        console.log('err', err);
+      }
+    })
   }
 
   componentDidMount() {
     $.ajax({
-      url: '/designers', 
-      success: (data) => {
+      url: '/designs', 
+      success: (designs) => {
         this.setState({
-          items: data
+          designs: designs
         })
       },
       error: (err) => {
@@ -25,10 +43,11 @@ class App extends React.Component {
     });
   }
 
+
   render () {
     return (<div>
-      <h1>Interior Designs</h1>
-      <List items={this.state.items}/>
+      <h1>Interior Design Styles</h1>
+      <List designs={this.state.designs}/>
     </div>)
   }
 }
