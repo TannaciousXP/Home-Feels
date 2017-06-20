@@ -1,1 +1,3 @@
 node_modules
+database-mongo/data/db
+react-clent/dist/bundle.js

@@ -3,7 +3,9 @@ import React, {Component} from 'react';
 
 const ListDesigner = (props) => (
   <div>
-    { props.item.description }
+    <li>
+      { props.item.designType }
+    </li>
   </div>
 )
 
