@@ -18,7 +18,7 @@ class App extends React.Component {
       method: 'GET',
       data: {designType: designType},
       success: (designers) => {
-        console.log('designers')
+        // console.log('INSIDE SEARCH DESIGNERS: ', designers);
         this.setState({
           designers: designers
         })
@@ -33,6 +33,7 @@ class App extends React.Component {
     $.ajax({
       url: '/designs', 
       success: (designs) => {
+        // console.log('AJAX /DESIGNS', designs);
         this.setState({
           designs: designs
         })
@@ -47,7 +48,7 @@ class App extends React.Component {
   render () {
     return (<div>
       <h1>Interior Design Styles</h1>
-      <List designs={this.state.designs}/>
+      <List designs={this.state.designs} designers={this.state.designers} searchDesigners={this.searchDesigners.bind(this)}/>
     </div>)
   }
 }

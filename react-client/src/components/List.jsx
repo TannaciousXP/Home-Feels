@@ -6,7 +6,7 @@ const List = (props) => (
     <h4> Interior Design Styles & Designers </h4>
     There are { props.designs.length } design types.
     <ul>
-      { props.designs.map(design => <ListDesign design={design}/>)}
+      { props.designs.map(design => <ListDesign design={design} searchDesigners={props.searchDesigners} designers={props.designers}/>)}
     </ul>
   </div>
 )

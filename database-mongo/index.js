@@ -253,6 +253,8 @@ var selectAllDesigns = function(callback) {
   })
 } 
 
+module.exports.Designer = Designer;
+module.exports.Design = Design;
 module.exports.selectAllDesigners = selectAllDesigners;
 module.exports.selectAllDesigns = selectAllDesigns;
 
