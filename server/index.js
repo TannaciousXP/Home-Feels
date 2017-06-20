@@ -18,26 +18,26 @@ app.use(express.static(__dirname + '/../react-client/dist'));
 
 app.get('/designers', function(req, res) {
   // console.log('INSDE OF APP.GET DESIGNERS: ', req.query.designType);
-  // designsOrDesigners.selectAllDesigners(function(err, designers) {
-  //   if (err) {
-  //     res.sendStatus(500);
-  //   } else {
-  //     designers.filter(function(designer) {
-  //       if (designer.designType === req.query.designType) {
-  //         return designer;
-  //       }
-  //     });
-  //     res.json(designers);
-  //   }
-  // })
-  designsOrDesigners.Designer.find({designType: req.query.designType}, function(err, designers) {
+  designsOrDesigners.selectAllDesigners(function(err, designers) {
     if (err) {
-      console.log('err', err);
+      res.sendStatus(500);
     } else {
-      // console.log('INSDE FIND DESIGNERS APP.GET:', designers);
+      // designers.filter(function(designer) {
+      //   if (designer.designType === req.query.designType) {
+      //     return designer;
+      //   }
+      // });
       res.send(designers);
     }
   })
+  // designsOrDesigners.Designer.find({designType: req.query.designType}, function(err, designers) {
+  //   if (err) {
+  //     console.log('err', err);
+  //   } else {
+  //     // console.log('INSDE FIND DESIGNERS APP.GET:', designers);
+  //     res.send(designers);
+  //   }
+  // })
 });
 
 app.get('/designs', function (req, res) {
