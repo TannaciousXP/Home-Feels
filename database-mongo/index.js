@@ -14,7 +14,46 @@ db.once('open', function() {
 
 var designersSchema = mongoose.Schema({
   name: {type: String, unique: true},
-  designType: String  
+  designType: String,
+  bio: String,
+  images: Array  
+});
+
+var Designer = mongoose.model('Designer', designersSchema);
+
+var p0ulHenningsen = new Designer ({
+
+});
+
+var charlesNRayEames = new Designer ({
+
+});
+
+var josephDirand = new Designer ({
+
+});
+
+// -------------------------------------------------------------------------//
+
+var designsSchema = mongoose.Schema({
+  designType: {type: String, unique: true},
+  description: String,
+  images: Array
+});
+
+
+var Design = mongoose.model('Design', designsSchema);
+
+var midCenturyModren = new Design ({
+
+});
+
+var scandinavian = new Design ({
+
+});
+
+var frenchNParisian = new Design ({
+
 });
 
 /*
@@ -30,9 +69,9 @@ Joseph Dirand for French/Parisian
 
 // var Item = mongoose.model('Item', itemSchema);
 
-var Designer = mongoose.model('Design', designersSchema);
 
-var selectAll = function(callback) {
+
+var selectAllDesigners = function(callback) {
   Designer.find({}, function(err, designers) {
     if(err) {
       callback(err, null);
@@ -42,5 +81,16 @@ var selectAll = function(callback) {
   });
 };
 
-module.exports.selectAll = selectAll;
+var selectAllDesigns = function(callback) {
+  Design.find({}, function(err, designs) {
+    if (err) {
+      callback(err, null);
+    } else {
+      callback(null, designs);
+    }
+  })
+} 
+
+module.exports.selectAllDesigners = selectAllDesigners;
+moduel.exports.selectAllDesigns = selectAllDesigns;
 
